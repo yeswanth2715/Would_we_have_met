@@ -1,0 +1,14 @@
+data:
+  dir: "./data"
+
+meeting:
+  radius_meters: 50
+  window_minutes: 10
+
+features:
+  novelty_method: "zscore"          # or "pmi"
+  unexpectedness_model: "markov"    # or "hour-distribution"
+  usefulness_metric: "repeat"       # or "duration"
+
+serendipity:
+  threshold_percentile: 0.8

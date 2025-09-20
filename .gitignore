@@ -96,6 +96,10 @@ venv.bak/
 # mkdocs
 /site
 
+outputs/
+.png
+.log
+
 # mypy / type checkers
 .mypy_cache/
 .dmypy.json

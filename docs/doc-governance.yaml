@@ -1,0 +1,82 @@
+version: 1
+triggers:
+  mission_change:
+    label: Mission change
+    description: Activate when the company mission changes.
+  target_user_change:
+    label: Target user change
+    description: Activate when the target user changes.
+  evidence_refresh:
+    label: Fresh evidence
+    description: Activate when new market or academic evidence is gathered.
+  feature_scope_change:
+    label: Feature scope change
+    description: Activate when feature scope or requirements change.
+  discovery_cycle:
+    label: Discovery cycle
+    description: Activate before each discovery cycle.
+  responsibility_change:
+    label: Responsibility change
+    description: Activate when responsibilities or hiring plans change.
+  implementation_shift:
+    label: Major implementation shift
+    description: Activate before major implementation shifts.
+  planning_cycle:
+    label: Planning cycle
+    description: Activate during each planning cycle.
+tracked_docs:
+  - key: vision
+    title: Vision
+    path: docs/vision.md
+    update_when: mission or target user changes
+    triggers:
+      - mission_change
+      - target_user_change
+  - key: research_artifact
+    title: Research Evidence Artifact
+    path: research/research-artifact-2026-03-23.md
+    update_when: fresh market or academic evidence is gathered
+    triggers:
+      - evidence_refresh
+  - key: prd
+    title: Product Requirements
+    path: docs/prd.md
+    update_when: feature scope or requirements change
+    triggers:
+      - feature_scope_change
+  - key: research_plan
+    title: Research Plan
+    path: docs/research-plan.md
+    update_when: each discovery cycle
+    triggers:
+      - discovery_cycle
+  - key: team
+    title: Team Operating Model
+    path: docs/team.md
+    update_when: responsibilities or hiring plans change
+    triggers:
+      - responsibility_change
+  - key: architecture
+    title: System Architecture
+    path: docs/architecture.md
+    update_when: major implementation shifts
+    triggers:
+      - implementation_shift
+  - key: security_trust
+    title: Security and Trust
+    path: docs/security-trust.md
+    update_when: major implementation shifts
+    triggers:
+      - implementation_shift
+  - key: workflow
+    title: Workflow
+    path: docs/workflow.md
+    update_when: each planning cycle
+    triggers:
+      - planning_cycle
+  - key: roadmap
+    title: Roadmap
+    path: docs/roadmap.md
+    update_when: each planning cycle
+    triggers:
+      - planning_cycle

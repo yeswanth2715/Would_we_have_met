@@ -1,0 +1,292 @@
+{
+  "active_triggers": {},
+  "history": [
+    {
+      "detected_at": "2026-03-23T10:38:29Z",
+      "event": "baseline",
+      "modified_at": "2026-03-23T10:15:51Z",
+      "new_sha256": "10f8aa6c186a12d4b7a991d74cfb1b675ecede45c6a18abd94c2f7c88cb763e4",
+      "old_sha256": null,
+      "path": "docs/vision.md",
+      "title": "Vision"
+    },
+    {
+      "detected_at": "2026-03-23T10:38:29Z",
+      "event": "baseline",
+      "modified_at": "2026-03-23T10:06:57Z",
+      "new_sha256": "792fed01766a6858c067e1a1f404d54e70a94120d716ae66856d68d963ee7957",
+      "old_sha256": null,
+      "path": "research/research-artifact-2026-03-23.md",
+      "title": "Research Evidence Artifact"
+    },
+    {
+      "detected_at": "2026-03-23T10:38:29Z",
+      "event": "baseline",
+      "modified_at": "2026-03-23T10:18:07Z",
+      "new_sha256": "c43207c75d0a54c2e6f607112e1ccfd3a1e6b966ed933ac5152bd2ba09ef5fb6",
+      "old_sha256": null,
+      "path": "docs/prd.md",
+      "title": "Product Requirements"
+    },
+    {
+      "detected_at": "2026-03-23T10:38:29Z",
+      "event": "baseline",
+      "modified_at": "2026-03-23T09:06:44Z",
+      "new_sha256": "a584fe083193f511b8f0271698e51ba91f5123b90616e2a302241931b3264f24",
+      "old_sha256": null,
+      "path": "docs/research-plan.md",
+      "title": "Research Plan"
+    },
+    {
+      "detected_at": "2026-03-23T10:38:29Z",
+      "event": "baseline",
+      "modified_at": "2026-03-23T09:06:44Z",
+      "new_sha256": "d4ea4b9d2f5002f31320eb40f98568a67943f94343860173af4953b9c7c138da",
+      "old_sha256": null,
+      "path": "docs/team.md",
+      "title": "Team Operating Model"
+    },
+    {
+      "detected_at": "2026-03-23T10:38:29Z",
+      "event": "baseline",
+      "modified_at": "2026-03-23T10:15:51Z",
+      "new_sha256": "0e5d8c619cd9dc6d4c9ba9e66461d70a10e58e1ca4bad5bd8b8569a2d5eaeec1",
+      "old_sha256": null,
+      "path": "docs/architecture.md",
+      "title": "System Architecture"
+    },
+    {
+      "detected_at": "2026-03-23T10:38:29Z",
+      "event": "baseline",
+      "modified_at": "2026-03-23T10:15:51Z",
+      "new_sha256": "6b0d57503cb2afcb80c60ee2e7aa5bb45ab6a0e920af63a06ffff5c7bf3db8aa",
+      "old_sha256": null,
+      "path": "docs/security-trust.md",
+      "title": "Security and Trust"
+    },
+    {
+      "detected_at": "2026-03-23T10:38:29Z",
+      "event": "baseline",
+      "modified_at": "2026-03-23T09:06:44Z",
+      "new_sha256": "542ed2468a7c237f20f9dd294c4fdb96890429cf507ac555dec201bbee0cac52",
+      "old_sha256": null,
+      "path": "docs/workflow.md",
+      "title": "Workflow"
+    },
+    {
+      "detected_at": "2026-03-23T10:38:29Z",
+      "event": "baseline",
+      "modified_at": "2026-03-23T09:06:44Z",
+      "new_sha256": "a220e4bd3241518d30553673ebe477b0027a7c2b83c7f26b698f80890cbbae97",
+      "old_sha256": null,
+      "path": "docs/roadmap.md",
+      "title": "Roadmap"
+    },
+    {
+      "detected_at": "2026-03-23T10:44:13Z",
+      "event": "modified",
+      "modified_at": "2026-03-23T10:44:01Z",
+      "new_sha256": "ae84bbaa8871b65e4caaada0f508e112f8d38fe329c6219b4ea001dbf1bf1cae",
+      "old_sha256": "10f8aa6c186a12d4b7a991d74cfb1b675ecede45c6a18abd94c2f7c88cb763e4",
+      "path": "docs/vision.md",
+      "title": "Vision"
+    },
+    {
+      "detected_at": "2026-03-23T10:44:13Z",
+      "event": "modified",
+      "modified_at": "2026-03-23T10:44:01Z",
+      "new_sha256": "187999537f05f6e5f05334401e67199c7d4fb2ef36dcbcffaa9ba38024d7b2dd",
+      "old_sha256": "c43207c75d0a54c2e6f607112e1ccfd3a1e6b966ed933ac5152bd2ba09ef5fb6",
+      "path": "docs/prd.md",
+      "title": "Product Requirements"
+    },
+    {
+      "detected_at": "2026-03-23T10:44:13Z",
+      "event": "modified",
+      "modified_at": "2026-03-23T10:44:01Z",
+      "new_sha256": "f15ce70fd743d6205df5299943cfc4adba3ca611936ac7797ba6459d3466f66d",
+      "old_sha256": "0e5d8c619cd9dc6d4c9ba9e66461d70a10e58e1ca4bad5bd8b8569a2d5eaeec1",
+      "path": "docs/architecture.md",
+      "title": "System Architecture"
+    },
+    {
+      "detected_at": "2026-03-23T10:44:13Z",
+      "event": "modified",
+      "modified_at": "2026-03-23T10:44:01Z",
+      "new_sha256": "9d72cbf223c287658ff9b881abc1c93cf5f7a1074797cc92c88f42bbf0a56710",
+      "old_sha256": "6b0d57503cb2afcb80c60ee2e7aa5bb45ab6a0e920af63a06ffff5c7bf3db8aa",
+      "path": "docs/security-trust.md",
+      "title": "Security and Trust"
+    }
+  ],
+  "last_synced_at": "2026-03-23T10:44:13Z",
+  "tracked_docs": {
+    "docs/architecture.md": {
+      "change_count": 1,
+      "exists": true,
+      "last_detected_change_at": "2026-03-23T10:44:13Z",
+      "last_event": "modified",
+      "modified_at": "2026-03-23T10:44:01Z",
+      "path": "docs/architecture.md",
+      "sha256": "f15ce70fd743d6205df5299943cfc4adba3ca611936ac7797ba6459d3466f66d",
+      "size_bytes": 4326,
+      "title": "System Architecture",
+      "triggers": [
+        "implementation_shift"
+      ],
+      "update_when": "major implementation shifts"
+    },
+    "docs/prd.md": {
+      "change_count": 1,
+      "exists": true,
+      "last_detected_change_at": "2026-03-23T10:44:13Z",
+      "last_event": "modified",
+      "modified_at": "2026-03-23T10:44:01Z",
+      "path": "docs/prd.md",
+      "sha256": "187999537f05f6e5f05334401e67199c7d4fb2ef36dcbcffaa9ba38024d7b2dd",
+      "size_bytes": 5614,
+      "title": "Product Requirements",
+      "triggers": [
+        "feature_scope_change"
+      ],
+      "update_when": "feature scope or requirements change"
+    },
+    "docs/research-plan.md": {
+      "change_count": 0,
+      "exists": true,
+      "last_detected_change_at": "2026-03-23T10:38:29Z",
+      "last_event": "baseline",
+      "modified_at": "2026-03-23T09:06:44Z",
+      "path": "docs/research-plan.md",
+      "sha256": "a584fe083193f511b8f0271698e51ba91f5123b90616e2a302241931b3264f24",
+      "size_bytes": 2049,
+      "title": "Research Plan",
+      "triggers": [
+        "discovery_cycle"
+      ],
+      "update_when": "each discovery cycle"
+    },
+    "docs/roadmap.md": {
+      "change_count": 0,
+      "exists": true,
+      "last_detected_change_at": "2026-03-23T10:38:29Z",
+      "last_event": "baseline",
+      "modified_at": "2026-03-23T09:06:44Z",
+      "path": "docs/roadmap.md",
+      "sha256": "a220e4bd3241518d30553673ebe477b0027a7c2b83c7f26b698f80890cbbae97",
+      "size_bytes": 1992,
+      "title": "Roadmap",
+      "triggers": [
+        "planning_cycle"
+      ],
+      "update_when": "each planning cycle"
+    },
+    "docs/security-trust.md": {
+      "change_count": 1,
+      "exists": true,
+      "last_detected_change_at": "2026-03-23T10:44:13Z",
+      "last_event": "modified",
+      "modified_at": "2026-03-23T10:44:01Z",
+      "path": "docs/security-trust.md",
+      "sha256": "9d72cbf223c287658ff9b881abc1c93cf5f7a1074797cc92c88f42bbf0a56710",
+      "size_bytes": 4395,
+      "title": "Security and Trust",
+      "triggers": [
+        "implementation_shift"
+      ],
+      "update_when": "major implementation shifts"
+    },
+    "docs/team.md": {
+      "change_count": 0,
+      "exists": true,
+      "last_detected_change_at": "2026-03-23T10:38:29Z",
+      "last_event": "baseline",
+      "modified_at": "2026-03-23T09:06:44Z",
+      "path": "docs/team.md",
+      "sha256": "d4ea4b9d2f5002f31320eb40f98568a67943f94343860173af4953b9c7c138da",
+      "size_bytes": 2698,
+      "title": "Team Operating Model",
+      "triggers": [
+        "responsibility_change"
+      ],
+      "update_when": "responsibilities or hiring plans change"
+    },
+    "docs/vision.md": {
+      "change_count": 1,
+      "exists": true,
+      "last_detected_change_at": "2026-03-23T10:44:13Z",
+      "last_event": "modified",
+      "modified_at": "2026-03-23T10:44:01Z",
+      "path": "docs/vision.md",
+      "sha256": "ae84bbaa8871b65e4caaada0f508e112f8d38fe329c6219b4ea001dbf1bf1cae",
+      "size_bytes": 3565,
+      "title": "Vision",
+      "triggers": [
+        "mission_change",
+        "target_user_change"
+      ],
+      "update_when": "mission or target user changes"
+    },
+    "docs/workflow.md": {
+      "change_count": 0,
+      "exists": true,
+      "last_detected_change_at": "2026-03-23T10:38:29Z",
+      "last_event": "baseline",
+      "modified_at": "2026-03-23T09:06:44Z",
+      "path": "docs/workflow.md",
+      "sha256": "542ed2468a7c237f20f9dd294c4fdb96890429cf507ac555dec201bbee0cac52",
+      "size_bytes": 2873,
+      "title": "Workflow",
+      "triggers": [
+        "planning_cycle"
+      ],
+      "update_when": "each planning cycle"
+    },
+    "research/research-artifact-2026-03-23.md": {
+      "change_count": 0,
+      "exists": true,
+      "last_detected_change_at": "2026-03-23T10:38:29Z",
+      "last_event": "baseline",
+      "modified_at": "2026-03-23T10:06:57Z",
+      "path": "research/research-artifact-2026-03-23.md",
+      "sha256": "792fed01766a6858c067e1a1f404d54e70a94120d716ae66856d68d963ee7957",
+      "size_bytes": 16193,
+      "title": "Research Evidence Artifact",
+      "triggers": [
+        "evidence_refresh"
+      ],
+      "update_when": "fresh market or academic evidence is gathered"
+    }
+  },
+  "trigger_events": [
+    {
+      "action": "activated",
+      "activated_at": "2026-03-23T10:42:18Z",
+      "at": "2026-03-23T10:42:18Z",
+      "note": "Add architecture and trust guidance for path insight feature",
+      "trigger": "implementation_shift"
+    },
+    {
+      "action": "activated",
+      "activated_at": "2026-03-23T10:42:42Z",
+      "at": "2026-03-23T10:42:42Z",
+      "note": "Add path overlap insight feature",
+      "trigger": "feature_scope_change"
+    },
+    {
+      "action": "resolved",
+      "activated_at": "2026-03-23T10:42:42Z",
+      "at": "2026-03-23T10:44:13Z",
+      "note": "Add path overlap insight feature",
+      "trigger": "feature_scope_change"
+    },
+    {
+      "action": "resolved",
+      "activated_at": "2026-03-23T10:42:18Z",
+      "at": "2026-03-23T10:44:13Z",
+      "note": "Add architecture and trust guidance for path insight feature",
+      "trigger": "implementation_shift"
+    }
+  ],
+  "version": 1
+}

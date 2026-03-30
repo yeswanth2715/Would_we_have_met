@@ -135,3 +135,6 @@ __marimo__/
 # Data: ignore all CSVs except the small sample for testing
 data/*.csv
 !data/sample_tracks.csv
+
+# Local founder/agent context
+.founder-private/

@@ -142,5 +142,6 @@ Codex can act as:
 - technical planning partner
 - implementation support across backend, data, and workflow automation
 - release checklist and architecture drafting support
+- founder-aligned operating partner when local private founder context exists outside the public docs
 
 But final accountability for policy, legal, and launch decisions stays with the human founding team.

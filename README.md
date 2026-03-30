@@ -43,6 +43,10 @@ The repo now includes a documentation backbone for turning this prototype into a
 - [Docs Audit Log](docs/audit-log.md)
 - [Docs Review Queue](docs/review-queue.md)
 
+## Public Boundary
+
+This repository is the shareable product, process, and workflow workspace.
+
 ## Working Principles
 
 - intentional over random

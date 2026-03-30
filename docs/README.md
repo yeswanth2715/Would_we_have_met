@@ -40,6 +40,10 @@ This folder is the operating system for the company and product.
 - run `python scripts/docs_governance.py trigger planning_cycle --note "weekly planning"` to mark planning-cycle docs as due
 - run `python scripts/docs_governance.py watch` to keep the audit files current while you edit docs locally
 
+## Public Boundary
+
+This `docs/` folder is the public company and product operating layer.
+
 ## Operating Rule
 
 If a decision affects user trust, identity, location, or personal safety, it must be reflected in both `architecture.md` and `security-trust.md` before release.

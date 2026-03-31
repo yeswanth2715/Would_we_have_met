@@ -2,7 +2,7 @@
 
 ## Working Vision Statement
 
-Build the safest and most intentional way for socially selective people to discover meaningful connection nearby or online, without forcing them through random events, crowded social scenes, or low-signal interactions.
+Building the safest and most intentional way for socially selective people to discover meaningful connection nearby or online, without forcing them through random events, crowded social scenes, or low-signal interactions.
 
 Help users understand not just who feels right, but why now feels right, including privacy-safe insight into whether they may have crossed paths before or are likely to overlap again soon.
 

@@ -1,11 +1,14 @@
 from fastapi import FastAPI, HTTPException
 from api.models import MoodCheckIn
+from api.candidates import router as candidates_router, set_checkins_store
 from datetime import datetime
 
 app = FastAPI(title="Would We Have Met - Alpha API")
 
 # Temporary in-memory store (replace with DB later)
-checkins = {}
+checkins: dict[str, dict] = {}
+set_checkins_store(checkins)
+app.include_router(candidates_router)
 
 @app.post("/checkin/mood")
 def submit_mood_checkin(checkin: MoodCheckIn):

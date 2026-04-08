@@ -1,17 +1,17 @@
 from fastapi import APIRouter, HTTPException, Query
-from pydantic import BaseModel
 
+from api.database import get_checkin, list_open_checkins
 from api.models import (
+    CandidateMatch,
     ConnectionIntent,
     Mood,
     MoodCheckIn,
     SocialBattery,
     TimeHorizon,
+    shared_interests_for,
 )
 
 router = APIRouter()
-
-checkins_store: dict[str, dict] = {}
 
 COMPATIBLE_MOOD_PAIRS = {
     frozenset((Mood.curious, Mood.open)),
@@ -20,24 +20,9 @@ COMPATIBLE_MOOD_PAIRS = {
 }
 
 
-class CandidateMatch(BaseModel):
-    user_id: str
-    compatibility_score: int
-    serendipity_bonus: int
-    total_score: int
-    mood: Mood
-    intent: ConnectionIntent
-    time_horizon: TimeHorizon
-    social_battery: SocialBattery
-
-
-def set_checkins_store(store: dict[str, dict]) -> None:
-    global checkins_store
-    checkins_store = store
-
-
 def calculate_compatibility(user1: MoodCheckIn, user2: MoodCheckIn) -> int:
     score = 0
+    shared_interests = shared_interests_for(user1, user2)
 
     if user1.intent == user2.intent:
         score += 30
@@ -51,8 +36,10 @@ def calculate_compatibility(user1: MoodCheckIn, user2: MoodCheckIn) -> int:
     if user1.social_battery == user2.social_battery:
         score += 15
 
-    if user1.is_open and user2.is_open:
+    if user1.online_only == user2.online_only:
         score += 10
+
+    score += min(len(shared_interests) * 8, 24)
 
     return score
 
@@ -66,36 +53,38 @@ def calculate_serendipity(user1: MoodCheckIn, user2: MoodCheckIn) -> int:
     if user1.online_only != user2.online_only:
         bonus += 10
 
-    return min(bonus, 20)
+    if user1.time_horizon != user2.time_horizon:
+        bonus += 5
+
+    return min(bonus, 25)
 
 
 def _load_checkin(user_id: str) -> MoodCheckIn:
-    payload = checkins_store.get(user_id)
+    payload = get_checkin(user_id)
     if payload is None:
         raise HTTPException(status_code=404, detail="No check-in found")
     return MoodCheckIn(**payload)
 
 
 @router.get("/candidates/{user_id}", response_model=list[CandidateMatch])
-def get_candidates(user_id: str, limit: int = Query(default=5, ge=1)) -> list[CandidateMatch]:
+def get_candidates(user_id: str, limit: int = Query(default=5, ge=1, le=20)) -> list[CandidateMatch]:
     current_user = _load_checkin(user_id)
     candidates: list[CandidateMatch] = []
 
-    for candidate_id, payload in checkins_store.items():
-        if candidate_id == user_id:
-            continue
-
+    for payload in list_open_checkins(exclude_user_id=user_id):
         candidate = MoodCheckIn(**payload)
         if not candidate.is_open:
             continue
 
         compatibility_score = calculate_compatibility(current_user, candidate)
         serendipity_bonus = calculate_serendipity(current_user, candidate)
+        shared_interests = shared_interests_for(current_user, candidate)
         total_score = compatibility_score + serendipity_bonus
 
         candidates.append(
             CandidateMatch(
                 user_id=candidate.user_id,
+                display_name=candidate.display_name or candidate.user_id,
                 compatibility_score=compatibility_score,
                 serendipity_bonus=serendipity_bonus,
                 total_score=total_score,
@@ -103,6 +92,7 @@ def get_candidates(user_id: str, limit: int = Query(default=5, ge=1)) -> list[Ca
                 intent=candidate.intent,
                 time_horizon=candidate.time_horizon,
                 social_battery=candidate.social_battery,
+                shared_interests=shared_interests,
             )
         )
 

@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Would We Have Met</title>
+  <style>
+    :root {
+      --bg: #f7f2e8;
+      --bg-soft: #fffaf4;
+      --ink: #1f1f1b;
+      --muted: #655f56;
+      --accent: #0f766e;
+      --accent-soft: #d7f2ee;
+      --card: rgba(255, 250, 244, 0.9);
+      --border: rgba(31, 31, 27, 0.1);
+      --danger: #a23628;
+      --shadow: 0 20px 45px rgba(73, 64, 49, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(15, 118, 110, 0.18), transparent 28%),
+        radial-gradient(circle at left center, rgba(214, 170, 79, 0.18), transparent 22%),
+        linear-gradient(180deg, #f6efe3 0%, #efe6d6 100%);
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 48px;
+    }
+
+    .hero {
+      margin-bottom: 24px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(36px, 7vw, 64px);
+      line-height: 0.95;
+      margin-top: 18px;
+      max-width: 12ch;
+    }
+
+    .hero p {
+      max-width: 62ch;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .screen {
+      display: none;
+      animation: fade-in 220ms ease;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    .shell {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1.1fr 1fr;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .two-col {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+      font: inherit;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(31, 31, 27, 0.12);
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--ink);
+    }
+
+    textarea {
+      min-height: 96px;
+      resize: vertical;
+    }
+
+    .checkbox-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .checkbox-row label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+    }
+
+    .checkbox-row input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent);
+    }
+
+    button {
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 18px;
+      cursor: pointer;
+      transition: transform 140ms ease, box-shadow 140ms ease, opacity 140ms ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(15, 118, 110, 0.18);
+    }
+
+    .primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .secondary {
+      background: rgba(255, 255, 255, 0.75);
+      color: var(--ink);
+      border: 1px solid var(--border);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .topbar-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.1);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .status {
+      min-height: 24px;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .status.error {
+      color: var(--danger);
+    }
+
+    .cards {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .card {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .card h3 {
+      font-size: 24px;
+    }
+
+    .card p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .session-thread {
+      display: grid;
+      gap: 12px;
+      max-height: 420px;
+      overflow-y: auto;
+      padding-right: 4px;
+      margin: 16px 0;
+    }
+
+    .bubble {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--border);
+    }
+
+    .bubble.mediator {
+      background: var(--accent-soft);
+    }
+
+    .bubble strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .helper {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 860px) {
+      .grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .page {
+        width: min(100%, calc(100% - 20px));
+      }
+
+      .panel {
+        padding: 20px;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .topbar-actions {
+        width: 100%;
+      }
+
+      .topbar-actions button {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="hero">
+      <span class="eyebrow">Would We Have Met Alpha</span>
+      <h1>Calm discovery with a softer first step.</h1>
+      <p>
+        Check in with your current mood, browse a small set of timing-aware matches,
+        and let the mediator open the first exchange before direct conversation.
+      </p>
+    </section>
+
+    <section id="checkin-screen" class="screen active">
+      <div class="shell">
+        <div class="panel">
+          <div class="topbar">
+            <div>
+              <h2>Mood Check-In</h2>
+              <p class="helper">Keep this lightweight. The goal is to capture enough context for better timing and a calmer intro.</p>
+            </div>
+          </div>
+
+          <form id="checkin-form">
+            <div class="two-col">
+              <label>
+                User ID
+                <input id="user-id" name="user_id" placeholder="yeswanth" required />
+              </label>
+              <label>
+                Display Name
+                <input id="display-name" name="display_name" placeholder="Yeswanth" />
+              </label>
+            </div>
+
+            <div class="two-col">
+              <label>
+                Mood
+                <select id="mood" name="mood">
+                  <option value="quiet">Quiet</option>
+                  <option value="curious">Curious</option>
+                  <option value="open" selected>Open</option>
+                  <option value="cautious">Cautious</option>
+                  <option value="energized">Energized</option>
+                  <option value="reflective">Reflective</option>
+                </select>
+              </label>
+              <label>
+                Social Battery
+                <select id="social-battery" name="social_battery">
+                  <option value="low">Low</option>
+                  <option value="medium" selected>Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="two-col">
+              <label>
+                Intent
+                <select id="intent" name="intent">
+                  <option value="friendship" selected>Friendship</option>
+                  <option value="dating">Dating</option>
+                  <option value="activity_partner">Activity Partner</option>
+                  <option value="conversation">Conversation</option>
+                </select>
+              </label>
+              <label>
+                Time Horizon
+                <select id="time-horizon" name="time_horizon">
+                  <option value="now">Now</option>
+                  <option value="today" selected>Today</option>
+                  <option value="this_week">This Week</option>
+                  <option value="later">Later</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="two-col">
+              <label>
+                Neighborhood Radius (km)
+                <input id="radius" name="neighborhood_radius_km" type="number" step="0.5" min="0.5" value="2.0" />
+              </label>
+              <label>
+                Interests
+                <input id="interests" name="interests" placeholder="books, coffee walks, indie films" />
+              </label>
+            </div>
+
+            <label>
+              Conversation Style
+              <textarea id="conversation-style" name="conversation_style" placeholder="Low-pressure, slower pacing, okay starting online."></textarea>
+            </label>
+
+            <div class="checkbox-row">
+              <label><input id="is-open" name="is_open" type="checkbox" checked /> Open to matches right now</label>
+              <label><input id="online-only" name="online_only" type="checkbox" /> Prefer online first</label>
+            </div>
+
+            <div>
+              <button class="primary" type="submit">Save Check-In And Load Matches</button>
+            </div>
+            <div id="checkin-status" class="status"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="matches-screen" class="screen">
+      <div class="topbar">
+        <div>
+          <h2 id="welcome-title">Your Matches</h2>
+          <p class="helper">A small set of candidates plus any active mediated intros you have in progress.</p>
+        </div>
+        <div class="topbar-actions">
+          <button id="refresh-button" class="secondary" type="button">Refresh</button>
+          <button id="back-button" class="secondary" type="button">Edit Check-In</button>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="panel">
+          <h2>Matched Candidates</h2>
+          <p class="helper">Candidates are ranked from the saved mood, intent, timing, and shared-interest signals in your latest check-in.</p>
+          <div id="candidates-list" class="cards"></div>
+        </div>
+
+        <div class="panel">
+          <h2>Mediated Intros</h2>
+          <p class="helper">The mediator only works with real participant messages. It never invents the other person's replies.</p>
+          <div id="sessions-list" class="cards"></div>
+
+          <div id="session-detail" class="hidden">
+            <div class="meta" id="session-meta"></div>
+            <div id="handoff-note" class="pill hidden"></div>
+            <div id="session-thread" class="session-thread"></div>
+
+            <form id="session-form">
+              <label>
+                Your message
+                <textarea id="session-message" placeholder="Share one easy first-step idea or one pacing preference."></textarea>
+              </label>
+              <button class="primary" type="submit">Send Through Mediator</button>
+            </form>
+          </div>
+
+          <div id="session-empty" class="status">Open a session from a match card or load one from your active sessions list.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const state = {
+      currentUserId: localStorage.getItem("wwhm-current-user") || "",
+      currentDisplayName: localStorage.getItem("wwhm-current-display-name") || "",
+      currentSessionId: null,
+    };
+
+    const checkinScreen = document.getElementById("checkin-screen");
+    const matchesScreen = document.getElementById("matches-screen");
+    const checkinForm = document.getElementById("checkin-form");
+    const sessionForm = document.getElementById("session-form");
+    const checkinStatus = document.getElementById("checkin-status");
+    const candidatesList = document.getElementById("candidates-list");
+    const sessionsList = document.getElementById("sessions-list");
+    const sessionDetail = document.getElementById("session-detail");
+    const sessionEmpty = document.getElementById("session-empty");
+    const sessionThread = document.getElementById("session-thread");
+    const sessionMeta = document.getElementById("session-meta");
+    const handoffNote = document.getElementById("handoff-note");
+    const welcomeTitle = document.getElementById("welcome-title");
+
+    function showScreen(screen) {
+      checkinScreen.classList.toggle("active", screen === "checkin");
+      matchesScreen.classList.toggle("active", screen === "matches");
+    }
+
+    function setStatus(element, message, isError = false) {
+      element.textContent = message || "";
+      element.classList.toggle("error", Boolean(isError));
+    }
+
+    function splitInterests(value) {
+      return value
+        .split(",")
+        .map((item) => item.trim())
+        .filter(Boolean);
+    }
+
+    function formatPreview(text) {
+      if (!text) {
+        return "No messages yet.";
+      }
+      return text.length > 120 ? `${text.slice(0, 117)}...` : text;
+    }
+
+    async function apiRequest(url, options = {}) {
+      const response = await fetch(url, {
+        headers: { "Content-Type": "application/json", ...(options.headers || {}) },
+        ...options,
+      });
+
+      if (!response.ok) {
+        let detail = "Request failed";
+        try {
+          const payload = await response.json();
+          detail = payload.detail || detail;
+        } catch (error) {
+          detail = response.statusText || detail;
+        }
+        throw new Error(detail);
+      }
+
+      if (response.status === 204) {
+        return null;
+      }
+      return response.json();
+    }
+
+    function renderCandidateCard(candidate) {
+      const shared = candidate.shared_interests.length
+        ? `Shared interests: ${candidate.shared_interests.join(", ")}`
+        : "No shared-interest overlap yet, but the timing signals are still strong.";
+
+      return `
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <h3>${candidate.display_name}</h3>
+              <div class="meta">
+                <span class="pill">${candidate.intent.replace("_", " ")}</span>
+                <span class="pill">${candidate.mood}</span>
+                <span class="pill">${candidate.time_horizon.replace("_", " ")}</span>
+              </div>
+            </div>
+            <span class="pill">Score ${candidate.total_score}</span>
+          </div>
+          <p>${shared}</p>
+          <p>Compatibility ${candidate.compatibility_score} + serendipity ${candidate.serendipity_bonus}</p>
+          <div class="meta">
+            <button class="primary" type="button" data-start-session="${candidate.user_id}">Start Mediated Intro</button>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderSessionCard(session) {
+      const otherName =
+        session.participant_one === state.currentUserId
+          ? session.participant_two_name
+          : session.participant_one_name;
+
+      return `
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <h3>${otherName}</h3>
+              <div class="meta">
+                <span class="pill">Stage ${session.stage}</span>
+                <span class="pill">${session.status.replace("_", " ")}</span>
+              </div>
+            </div>
+            ${session.direct_ready ? '<span class="pill">Ready</span>' : ""}
+          </div>
+          <p>${formatPreview(session.last_message_preview)}</p>
+          <div class="meta">
+            <button class="secondary" type="button" data-open-session="${session.session_id}">Open Session</button>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderSessionsDetail(session) {
+      const currentName = session.participant_one === state.currentUserId
+        ? session.participant_one_name
+        : session.participant_two_name;
+      const otherName = session.participant_one === state.currentUserId
+        ? session.participant_two_name
+        : session.participant_one_name;
+
+      sessionMeta.innerHTML = `
+        <span class="pill">${currentName}</span>
+        <span class="pill">${otherName}</span>
+        <span class="pill">Stage ${session.stage}</span>
+        <span class="pill">${session.status.replace("_", " ")}</span>
+      `;
+
+      handoffNote.textContent = session.handoff_message || "";
+      handoffNote.classList.toggle("hidden", !session.handoff_message);
+
+      sessionThread.innerHTML = session.messages
+        .map((message) => {
+          const bubbleClass = message.speaker_role === "mediator" ? "bubble mediator" : "bubble";
+          return `
+            <article class="${bubbleClass}">
+              <strong>${message.speaker_display_name}</strong>
+              <div>${message.message}</div>
+            </article>
+          `;
+        })
+        .join("");
+
+      sessionDetail.classList.remove("hidden");
+      sessionEmpty.classList.add("hidden");
+    }
+
+    async function refreshMatches() {
+      if (!state.currentUserId) {
+        return;
+      }
+
+      const [candidates, sessions] = await Promise.all([
+        apiRequest(`/candidates/${encodeURIComponent(state.currentUserId)}`),
+        apiRequest(`/mediator/sessions/user/${encodeURIComponent(state.currentUserId)}`),
+      ]);
+
+      candidatesList.innerHTML = candidates.length
+        ? candidates.map(renderCandidateCard).join("")
+        : `<div class="status">No open candidates yet. Add a second user check-in to see matches.</div>`;
+
+      sessionsList.innerHTML = sessions.length
+        ? sessions.map(renderSessionCard).join("")
+        : `<div class="status">No mediator sessions yet. Start one from a match card.</div>`;
+    }
+
+    async function openSession(sessionId) {
+      state.currentSessionId = sessionId;
+      const session = await apiRequest(`/mediator/sessions/${sessionId}`);
+      renderSessionsDetail(session);
+    }
+
+    async function startSession(candidateUserId) {
+      const session = await apiRequest("/mediator/sessions", {
+        method: "POST",
+        body: JSON.stringify({
+          requester_user_id: state.currentUserId,
+          candidate_user_id: candidateUserId,
+        }),
+      });
+
+      await refreshMatches();
+      renderSessionsDetail(session);
+    }
+
+    checkinForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      setStatus(checkinStatus, "Saving your check-in...");
+
+      const payload = {
+        user_id: document.getElementById("user-id").value.trim(),
+        display_name: document.getElementById("display-name").value.trim(),
+        mood: document.getElementById("mood").value,
+        social_battery: document.getElementById("social-battery").value,
+        intent: document.getElementById("intent").value,
+        time_horizon: document.getElementById("time-horizon").value,
+        neighborhood_radius_km: Number(document.getElementById("radius").value || 2),
+        interests: splitInterests(document.getElementById("interests").value),
+        conversation_style: document.getElementById("conversation-style").value.trim(),
+        is_open: document.getElementById("is-open").checked,
+        online_only: document.getElementById("online-only").checked,
+      };
+
+      try {
+        await apiRequest("/checkin/mood", {
+          method: "POST",
+          body: JSON.stringify(payload),
+        });
+
+        state.currentUserId = payload.user_id;
+        state.currentDisplayName = payload.display_name || payload.user_id;
+        localStorage.setItem("wwhm-current-user", state.currentUserId);
+        localStorage.setItem("wwhm-current-display-name", state.currentDisplayName);
+        welcomeTitle.textContent = `${state.currentDisplayName}'s Matches`;
+        showScreen("matches");
+        await refreshMatches();
+        setStatus(checkinStatus, "Check-in saved.");
+      } catch (error) {
+        setStatus(checkinStatus, error.message, true);
+      }
+    });
+
+    sessionForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const messageInput = document.getElementById("session-message");
+      const message = messageInput.value.trim();
+
+      if (!message || !state.currentSessionId) {
+        return;
+      }
+
+      try {
+        const session = await apiRequest(`/mediator/sessions/${state.currentSessionId}/turn`, {
+          method: "POST",
+          body: JSON.stringify({
+            speaker_user_id: state.currentUserId,
+            message,
+          }),
+        });
+        messageInput.value = "";
+        renderSessionsDetail(session);
+        await refreshMatches();
+      } catch (error) {
+        alert(error.message);
+      }
+    });
+
+    document.getElementById("refresh-button").addEventListener("click", async () => {
+      await refreshMatches();
+      if (state.currentSessionId) {
+        await openSession(state.currentSessionId);
+      }
+    });
+
+    document.getElementById("back-button").addEventListener("click", () => {
+      showScreen("checkin");
+    });
+
+    candidatesList.addEventListener("click", async (event) => {
+      const button = event.target.closest("[data-start-session]");
+      if (!button) {
+        return;
+      }
+      await startSession(button.dataset.startSession);
+    });
+
+    sessionsList.addEventListener("click", async (event) => {
+      const button = event.target.closest("[data-open-session]");
+      if (!button) {
+        return;
+      }
+      await openSession(button.dataset.openSession);
+    });
+
+    if (state.currentUserId) {
+      document.getElementById("user-id").value = state.currentUserId;
+      document.getElementById("display-name").value = state.currentDisplayName;
+      welcomeTitle.textContent = `${state.currentDisplayName || state.currentUserId}'s Matches`;
+      showScreen("matches");
+      refreshMatches().catch((error) => {
+        showScreen("checkin");
+        setStatus(checkinStatus, error.message, true);
+      });
+    }
+  </script>
+</body>
+</html>

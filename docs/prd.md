@@ -120,7 +120,8 @@ Would We Have Met becomes a trust-first connection platform that recommends near
 - mood capture
 - basic candidate ranking
 - internal-only overlap scoring and narrative testing
-- no chat, only mutual interest signaling
+- mediated intro v0 with the system opening the first exchange and guiding a calm handoff
+- no unrestricted direct chat yet
 
 ### Beta
 

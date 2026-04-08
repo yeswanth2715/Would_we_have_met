@@ -25,6 +25,22 @@ The current codebase already gives us a useful intelligence foundation:
 
 These pieces can become the first layer of our future match-intelligence service.
 
+## Alpha App Surface
+
+The repo now also includes a working alpha app surface built on FastAPI:
+
+- SQLite-backed persistence for mood check-ins and mediator sessions
+- a browser UI served from `/` for mood check-in, candidate discovery, and mediated intros
+- a mediator v0 that opens the first exchange and suggests a handoff once both people have shared enough context
+
+Run it locally with:
+
+```bash
+uvicorn api.main:app --reload
+```
+
+Then open `http://127.0.0.1:8000/`.
+
 ## Founder Docs
 
 The repo now includes a documentation backbone for turning this prototype into a real product company:

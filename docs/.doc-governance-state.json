@@ -261,19 +261,100 @@
       "old_sha256": "9c2554fae67a0a330bafaa627c013ab4905e132302c4cdab1d61a92694cf2444",
       "path": "docs/prd.md",
       "title": "Product Requirements"
+    },
+    {
+      "detected_at": "2026-04-08T13:04:02Z",
+      "event": "modified",
+      "modified_at": "2026-04-08T13:04:01Z",
+      "new_sha256": "3d1cb0e7a20adf5d2f0a24d3d4de01b239bc0ff5d237ec7e3a8ca80b9236e230",
+      "old_sha256": "8ca3395ed74cebe20f45b32220c6846aed46e0e7717705be2f21ba7babffd2fe",
+      "path": "docs/vision.md",
+      "title": "Vision"
+    },
+    {
+      "detected_at": "2026-04-08T13:04:02Z",
+      "event": "modified",
+      "modified_at": "2026-04-08T13:04:01Z",
+      "new_sha256": "792fed01766a6858c067e1a1f404d54e70a94120d716ae66856d68d963ee7957",
+      "old_sha256": "4fbf1a8b20c49999876e1684f80e0d0a0652a07659d9e6c27d806fcb6d93bc90",
+      "path": "research/research-artifact-2026-03-23.md",
+      "title": "Research Evidence Artifact"
+    },
+    {
+      "detected_at": "2026-04-08T13:04:02Z",
+      "event": "modified",
+      "modified_at": "2026-04-08T13:04:01Z",
+      "new_sha256": "03a4a015f2f3e4fcf4929125e83f9df7861d72a06b873ae8e43802e81f1ce89d",
+      "old_sha256": "a13a5f96fea95bb78bdc73b21f26d25659b94544f0eb9ad2764920488ad39793",
+      "path": "docs/prd.md",
+      "title": "Product Requirements"
+    },
+    {
+      "detected_at": "2026-04-08T13:04:02Z",
+      "event": "modified",
+      "modified_at": "2026-04-08T13:04:01Z",
+      "new_sha256": "a584fe083193f511b8f0271698e51ba91f5123b90616e2a302241931b3264f24",
+      "old_sha256": "1c176f46aa81de27b2ee9e3ca4dc35f243cf511ca988a2046be7fd92e9f677d0",
+      "path": "docs/research-plan.md",
+      "title": "Research Plan"
+    },
+    {
+      "detected_at": "2026-04-08T13:04:02Z",
+      "event": "modified",
+      "modified_at": "2026-04-08T13:04:01Z",
+      "new_sha256": "fb11551882e42047bb722cbeb0860b2577d1a5f30d29888d89b8e7c64f9b6542",
+      "old_sha256": "eeb8445a16ce90a0546d327a0a40c0ad1e9446561a28e94ac539704d528f4065",
+      "path": "docs/team.md",
+      "title": "Team Operating Model"
+    },
+    {
+      "detected_at": "2026-04-08T13:04:02Z",
+      "event": "modified",
+      "modified_at": "2026-04-08T13:04:01Z",
+      "new_sha256": "f15ce70fd743d6205df5299943cfc4adba3ca611936ac7797ba6459d3466f66d",
+      "old_sha256": "9317b01049da6b4530ba617ff50882b2c72f2cc2119d24dec6a5b71e3b2a4ae0",
+      "path": "docs/architecture.md",
+      "title": "System Architecture"
+    },
+    {
+      "detected_at": "2026-04-08T13:04:02Z",
+      "event": "modified",
+      "modified_at": "2026-04-08T13:04:01Z",
+      "new_sha256": "9d72cbf223c287658ff9b881abc1c93cf5f7a1074797cc92c88f42bbf0a56710",
+      "old_sha256": "c6bd6b9c8677e04227f4fd00a64497367b13102bf84f300d591584e3be526965",
+      "path": "docs/security-trust.md",
+      "title": "Security and Trust"
+    },
+    {
+      "detected_at": "2026-04-08T13:04:02Z",
+      "event": "modified",
+      "modified_at": "2026-04-08T13:04:01Z",
+      "new_sha256": "542ed2468a7c237f20f9dd294c4fdb96890429cf507ac555dec201bbee0cac52",
+      "old_sha256": "ab04c1f6b0b4a295f58fa27982279676e510b88fafea867785d09fd862cf4535",
+      "path": "docs/workflow.md",
+      "title": "Workflow"
+    },
+    {
+      "detected_at": "2026-04-08T13:04:02Z",
+      "event": "modified",
+      "modified_at": "2026-04-08T13:04:01Z",
+      "new_sha256": "a220e4bd3241518d30553673ebe477b0027a7c2b83c7f26b698f80890cbbae97",
+      "old_sha256": "de5423fa1ee2fb027947fe610867a1156a9a053d040c6fd331c876281ede503f",
+      "path": "docs/roadmap.md",
+      "title": "Roadmap"
     }
   ],
-  "last_synced_at": "2026-04-08T12:03:20Z",
+  "last_synced_at": "2026-04-08T13:04:02Z",
   "tracked_docs": {
     "docs/architecture.md": {
-      "change_count": 2,
+      "change_count": 3,
       "exists": true,
-      "last_detected_change_at": "2026-04-08T10:39:53Z",
+      "last_detected_change_at": "2026-04-08T13:04:02Z",
       "last_event": "modified",
-      "modified_at": "2026-03-23T21:34:30Z",
+      "modified_at": "2026-04-08T13:04:01Z",
       "path": "docs/architecture.md",
-      "sha256": "9317b01049da6b4530ba617ff50882b2c72f2cc2119d24dec6a5b71e3b2a4ae0",
-      "size_bytes": 4458,
+      "sha256": "f15ce70fd743d6205df5299943cfc4adba3ca611936ac7797ba6459d3466f66d",
+      "size_bytes": 4326,
       "title": "System Architecture",
       "triggers": [
         "implementation_shift"
@@ -281,14 +362,14 @@
       "update_when": "major implementation shifts"
     },
     "docs/prd.md": {
-      "change_count": 3,
+      "change_count": 4,
       "exists": true,
-      "last_detected_change_at": "2026-04-08T12:03:20Z",
+      "last_detected_change_at": "2026-04-08T13:04:02Z",
       "last_event": "modified",
-      "modified_at": "2026-04-08T12:02:36Z",
+      "modified_at": "2026-04-08T13:04:01Z",
       "path": "docs/prd.md",
-      "sha256": "a13a5f96fea95bb78bdc73b21f26d25659b94544f0eb9ad2764920488ad39793",
-      "size_bytes": 5854,
+      "sha256": "03a4a015f2f3e4fcf4929125e83f9df7861d72a06b873ae8e43802e81f1ce89d",
+      "size_bytes": 5696,
       "title": "Product Requirements",
       "triggers": [
         "feature_scope_change"
@@ -296,14 +377,14 @@
       "update_when": "feature scope or requirements change"
     },
     "docs/research-plan.md": {
-      "change_count": 2,
+      "change_count": 3,
       "exists": true,
-      "last_detected_change_at": "2026-04-08T10:39:53Z",
+      "last_detected_change_at": "2026-04-08T13:04:02Z",
       "last_event": "modified",
-      "modified_at": "2026-03-23T21:34:30Z",
+      "modified_at": "2026-04-08T13:04:01Z",
       "path": "docs/research-plan.md",
-      "sha256": "1c176f46aa81de27b2ee9e3ca4dc35f243cf511ca988a2046be7fd92e9f677d0",
-      "size_bytes": 2102,
+      "sha256": "a584fe083193f511b8f0271698e51ba91f5123b90616e2a302241931b3264f24",
+      "size_bytes": 2049,
       "title": "Research Plan",
       "triggers": [
         "discovery_cycle"
@@ -311,14 +392,14 @@
       "update_when": "each discovery cycle"
     },
     "docs/roadmap.md": {
-      "change_count": 2,
+      "change_count": 3,
       "exists": true,
-      "last_detected_change_at": "2026-04-08T10:39:53Z",
+      "last_detected_change_at": "2026-04-08T13:04:02Z",
       "last_event": "modified",
-      "modified_at": "2026-03-23T21:34:30Z",
+      "modified_at": "2026-04-08T13:04:01Z",
       "path": "docs/roadmap.md",
-      "sha256": "de5423fa1ee2fb027947fe610867a1156a9a053d040c6fd331c876281ede503f",
-      "size_bytes": 2112,
+      "sha256": "a220e4bd3241518d30553673ebe477b0027a7c2b83c7f26b698f80890cbbae97",
+      "size_bytes": 1992,
       "title": "Roadmap",
       "triggers": [
         "planning_cycle"
@@ -326,14 +407,14 @@
       "update_when": "each planning cycle"
     },
     "docs/security-trust.md": {
-      "change_count": 2,
+      "change_count": 3,
       "exists": true,
-      "last_detected_change_at": "2026-04-08T10:39:53Z",
+      "last_detected_change_at": "2026-04-08T13:04:02Z",
       "last_event": "modified",
-      "modified_at": "2026-03-23T21:34:30Z",
+      "modified_at": "2026-04-08T13:04:01Z",
       "path": "docs/security-trust.md",
-      "sha256": "c6bd6b9c8677e04227f4fd00a64497367b13102bf84f300d591584e3be526965",
-      "size_bytes": 4513,
+      "sha256": "9d72cbf223c287658ff9b881abc1c93cf5f7a1074797cc92c88f42bbf0a56710",
+      "size_bytes": 4395,
       "title": "Security and Trust",
       "triggers": [
         "implementation_shift"
@@ -341,14 +422,14 @@
       "update_when": "major implementation shifts"
     },
     "docs/team.md": {
-      "change_count": 2,
+      "change_count": 3,
       "exists": true,
-      "last_detected_change_at": "2026-04-08T10:39:53Z",
+      "last_detected_change_at": "2026-04-08T13:04:02Z",
       "last_event": "modified",
-      "modified_at": "2026-03-30T20:55:45Z",
+      "modified_at": "2026-04-08T13:04:01Z",
       "path": "docs/team.md",
-      "sha256": "eeb8445a16ce90a0546d327a0a40c0ad1e9446561a28e94ac539704d528f4065",
-      "size_bytes": 2947,
+      "sha256": "fb11551882e42047bb722cbeb0860b2577d1a5f30d29888d89b8e7c64f9b6542",
+      "size_bytes": 2800,
       "title": "Team Operating Model",
       "triggers": [
         "responsibility_change"
@@ -356,14 +437,14 @@
       "update_when": "responsibilities or hiring plans change"
     },
     "docs/vision.md": {
-      "change_count": 3,
+      "change_count": 4,
       "exists": true,
-      "last_detected_change_at": "2026-04-08T10:39:53Z",
+      "last_detected_change_at": "2026-04-08T13:04:02Z",
       "last_event": "modified",
-      "modified_at": "2026-04-06T11:25:34Z",
+      "modified_at": "2026-04-08T13:04:01Z",
       "path": "docs/vision.md",
-      "sha256": "8ca3395ed74cebe20f45b32220c6846aed46e0e7717705be2f21ba7babffd2fe",
-      "size_bytes": 3660,
+      "sha256": "3d1cb0e7a20adf5d2f0a24d3d4de01b239bc0ff5d237ec7e3a8ca80b9236e230",
+      "size_bytes": 3568,
       "title": "Vision",
       "triggers": [
         "mission_change",
@@ -372,14 +453,14 @@
       "update_when": "mission or target user changes"
     },
     "docs/workflow.md": {
-      "change_count": 2,
+      "change_count": 3,
       "exists": true,
-      "last_detected_change_at": "2026-04-08T10:39:53Z",
+      "last_detected_change_at": "2026-04-08T13:04:02Z",
       "last_event": "modified",
-      "modified_at": "2026-03-23T21:34:30Z",
+      "modified_at": "2026-04-08T13:04:01Z",
       "path": "docs/workflow.md",
-      "sha256": "ab04c1f6b0b4a295f58fa27982279676e510b88fafea867785d09fd862cf4535",
-      "size_bytes": 3040,
+      "sha256": "542ed2468a7c237f20f9dd294c4fdb96890429cf507ac555dec201bbee0cac52",
+      "size_bytes": 2873,
       "title": "Workflow",
       "triggers": [
         "planning_cycle"
@@ -387,14 +468,14 @@
       "update_when": "each planning cycle"
     },
     "research/research-artifact-2026-03-23.md": {
-      "change_count": 2,
+      "change_count": 3,
       "exists": true,
-      "last_detected_change_at": "2026-04-08T10:39:53Z",
+      "last_detected_change_at": "2026-04-08T13:04:02Z",
       "last_event": "modified",
-      "modified_at": "2026-03-23T21:34:31Z",
+      "modified_at": "2026-04-08T13:04:01Z",
       "path": "research/research-artifact-2026-03-23.md",
-      "sha256": "4fbf1a8b20c49999876e1684f80e0d0a0652a07659d9e6c27d806fcb6d93bc90",
-      "size_bytes": 16432,
+      "sha256": "792fed01766a6858c067e1a1f404d54e70a94120d716ae66856d68d963ee7957",
+      "size_bytes": 16193,
       "title": "Research Evidence Artifact",
       "triggers": [
         "evidence_refresh"

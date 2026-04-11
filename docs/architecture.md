@@ -98,12 +98,15 @@ This is where the existing prototype can evolve. The current encounter detection
 
 ## Recommended Initial Stack
 
+- Next.js for the responsive web client once the alpha UX is ready to harden
+- Tailwind for fast client-side UI iteration and design system consistency
 - FastAPI for backend APIs
 - PostgreSQL for transactional data
 - Redis for caching and short-lived session or rate-limit data
 - object storage for media and verification artifacts
 - background workers for scoring, moderation queues, and verification callbacks
 - analytics warehouse for experiments and model evaluation
+- MCP-compatible internal tooling for agent-assisted research, moderation, and operations workflows when that layer is introduced
 
 ## Environment Strategy
 
@@ -130,3 +133,13 @@ Current modules that remain useful:
 - `main.py`: prototype pipeline orchestration
 
 These should eventually move behind service boundaries instead of remaining as a single script pipeline.
+
+## Current Alpha Implementation
+
+The current shipped alpha uses:
+
+- FastAPI for the API and routing layer
+- SQLite for local persistence of check-ins, sessions, and mood history
+- a simple browser UI served from the API app
+
+This is intentionally lighter than the target production stack so the team can validate the workflow before moving the client to Next.js and the database layer fully to PostgreSQL.

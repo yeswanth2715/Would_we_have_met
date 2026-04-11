@@ -41,6 +41,23 @@ uvicorn api.main:app --reload
 
 Then open `http://127.0.0.1:8000/`.
 
+## Current And Target Stack
+
+Current alpha implementation:
+
+- FastAPI for the API and application routing
+- SQLite for local alpha persistence
+- plain HTML, CSS, and JavaScript served directly by the FastAPI app
+- Python unit tests for API, mediator flow, and persistence behavior
+
+Production-oriented stack alignment:
+
+- PostgreSQL is the planned transactional database and remains the recommended production default in `docs/architecture.md`
+- Next.js plus Tailwind is a natural path for the responsive web client once the alpha interaction model is locked
+- MCP-style tool integrations are a good fit for future internal research, moderation, and operations workflows, but are not yet implemented in this repo
+
+This keeps the current repo honest about what is already built while showing the production stack direction clearly.
+
 ## Founder Docs
 
 The repo now includes a documentation backbone for turning this prototype into a real product company:
